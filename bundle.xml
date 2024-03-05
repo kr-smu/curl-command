@@ -1,0 +1,32 @@
+<?document type="cbunxml" version="1.0" ?>
+<bundle name="Curl Commands" version="0.1" type="custom" path="curl_command">
+    <label>Curl Command</label>
+    <author>Kassow Robots</author>
+    <description>Integration of Curl Library using CBun Command</description>
+    <command
+        package="com.kassowrobots.curl.command"
+        label="CURL">
+        <category name="com.kassowrobots.command.category.FUNC"/>
+        <options label="CURL"
+            description="Checks the status of server"
+            format="%1$s = %2$,.3f + %3$,.3f">
+            <param name="status" type="Number">
+                <label>Status</label>
+            </param>
+            <param name="url" type="string">
+                <label>URL</label>
+                <default>boschrexroth.com</default>
+            </param>
+            <param name="function" type="string">
+                <label>Function</label>
+                <default>curl</default>
+            </param>
+        </options>
+        <method-call type="static"
+            method="setValue"
+            class="kswx_curl::CurlCommand">
+            <include>curl_command/curl_command.h</include>
+        </method-call>
+    </command>
+
+</bundle>
