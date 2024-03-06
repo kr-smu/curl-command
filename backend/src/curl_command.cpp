@@ -110,6 +110,10 @@ CBUN_PCALL CurlCommand::setValue(kr2_program_api::Number& target, std::string ur
         std::cerr << "curl_easy_perform failed: " << curl_easy_strerror(res) << std::endl;
       }
 
+
+      // Release Header-Ressources
+      curl_slist_free_all(headers);
+
       // Cleanup curl handle
       curl_easy_cleanup(curl);
     } else {
