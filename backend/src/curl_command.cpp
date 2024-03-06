@@ -90,6 +90,11 @@ CBUN_PCALL CurlCommand::setValue(kr2_program_api::Number& target, std::string ur
       headers = curl_slist_append(headers, "Content-Type: application/json-patch+json");
       curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
 
+      // Callback-Function, to process the recieved Data
+      std::string response_data;
+      curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+      curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_data);
+
       // Optional: Set timeout in seconds (replace 5 with your desired timeout)
       curl_easy_setopt(curl, CURLOPT_TIMEOUT, 5L);
 
