@@ -41,6 +41,13 @@
 
 using namespace kswx_curl;
 
+// Callback-Function
+size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* output) {
+  size_t total_size = size * nmemb;
+  output ->append((char*)contents, total_size);
+  return total_size;
+}
+
 CurlCommand::CurlCommand(kr2_program_api::ProgramInterface* a_api)
 {}
 
@@ -59,7 +66,7 @@ CBUN_PCALL CurlCommand::setValue(kr2_program_api::Number& target, std::string ur
 
     if (curl) {
       // Set a simple URL to check (replace with your preferred URL)
-      curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+      curl_easy_setopt(curl, CURLOPT_URL, url.);
 
       // Optional: Set timeout in seconds (replace 5 with your desired timeout)
       curl_easy_setopt(curl, CURLOPT_TIMEOUT, 5L);
