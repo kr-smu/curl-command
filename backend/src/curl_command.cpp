@@ -66,7 +66,10 @@ CBUN_PCALL CurlCommand::setValue(kr2_program_api::Number& target, std::string ur
 
     if (curl) {
       // Set a simple URL to check (replace with your preferred URL)
-      curl_easy_setopt(curl, CURLOPT_URL, url.);
+      curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+
+      // Set the HTTP PUT 
+      curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "PUT");
 
       // Optional: Set timeout in seconds (replace 5 with your desired timeout)
       curl_easy_setopt(curl, CURLOPT_TIMEOUT, 5L);
