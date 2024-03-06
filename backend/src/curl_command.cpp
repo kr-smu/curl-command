@@ -71,6 +71,20 @@ CBUN_PCALL CurlCommand::setValue(kr2_program_api::Number& target, std::string ur
       // Set the HTTP PUT 
       curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "PUT");
 
+      // set data wich are send by the PUT request
+      const char* json_data = R"(
+        {
+          "id": "0bf3980e-35dc-4062-90da-7c6ef9d70d55",
+          "name": "PickPart",
+          "deviceName": "RobotHandler.Extension",
+          "deviceHierarchyPath": "station.RobotHandler",
+          "inParameters": [],
+          "outParameters": []
+
+        }
+      )";
+      curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json_data);
+
       // Optional: Set timeout in seconds (replace 5 with your desired timeout)
       curl_easy_setopt(curl, CURLOPT_TIMEOUT, 5L);
 
