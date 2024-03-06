@@ -47,7 +47,7 @@ CurlCommand::CurlCommand(kr2_program_api::ProgramInterface* a_api)
 CurlCommand::~CurlCommand()
 {}
 
-CBUN_PCALL CurlCommand::setValue(kr2_program_api::Number& target, std::string a, std::string b)
+CBUN_PCALL CurlCommand::setValue(kr2_program_api::Number& target, std::string url, std::string b)
 {
   // Check if b is "curl" to proceed with curl check
   if (b == "curl") {
@@ -59,7 +59,7 @@ CBUN_PCALL CurlCommand::setValue(kr2_program_api::Number& target, std::string a,
 
     if (curl) {
       // Set a simple URL to check (replace with your preferred URL)
-      curl_easy_setopt(curl, CURLOPT_URL, a.c_str());
+      curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 
       // Optional: Set timeout in seconds (replace 5 with your desired timeout)
       curl_easy_setopt(curl, CURLOPT_TIMEOUT, 5L);

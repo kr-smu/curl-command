@@ -44,7 +44,7 @@ class CurlCommand {
         
         virtual ~CurlCommand();
                 
-        static CBUN_PCALL setValue(kr2_program_api::Number& target, std::string a, std::string b);
+        static CBUN_PCALL setValue(kr2_program_api::Number& target, std::string url, std::string b);
         
     };
     
