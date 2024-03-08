@@ -21,6 +21,10 @@
                 <label>Function</label>
                 <default>curl</default>
             </param>
+            <param name="PUT" type="string">
+                <label>PUT</label>
+                <default>"id": "0bf3980e-35dc-4062-90da-7c6ef9d70d55", "name": "PickPart", "deviceName": "RobotHandler.Extension", "deviceHierarchyPath": "Station.RobotHandler", "inParameters": [], "outParameters": []</default>
+            </param>
         </options>
         <method-call type="static"
             method="setValue"
