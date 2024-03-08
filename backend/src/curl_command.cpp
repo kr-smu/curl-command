@@ -47,7 +47,7 @@ CurlCommand::CurlCommand(kr2_program_api::ProgramInterface* a_api)
 CurlCommand::~CurlCommand()
 {}
 
-CBUN_PCALL CurlCommand::setValue(kr2_program_api::Number& target, std::string url, std::string b)
+CBUN_PCALL CurlCommand::setValue(kr2_program_api::Number& target, std::string url, std::string b, std::string put)
 {
   // Check if b is "curl" to proceed with curl check
   if (b == "curl") {
