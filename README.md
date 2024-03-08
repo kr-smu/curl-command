@@ -2,6 +2,10 @@
 
 This repository provides a CBun Command class (`CurlCommand`) for performing HTTP requests using libcurl.
 
+You can downlad the prebuilt CBun in Releases: 
+
+https://github.com/kr-smu/curl-command/releases/download/0.1/curl_command.cbun
+
 **Features:**
 
 * Checks the Status of the server using Curl
